@@ -28,6 +28,45 @@
                     </div>
                 </div>
             </div>
+
+<script>
+    const form = document.querySelector('form');
+    const nameInput = document.querySelector('input[placeholder="Name*"]');
+    const emailInput = document.querySelector('input[placeholder="Email*"]');
+    const messageInput = document.querySelector('input[placeholder="Your Message*"]');
+
+    const namePattern = /^[A-Za-z\s]+$/;
+
+    function validateForm() {
+
+        let errors = [];
+
+        if (!namePattern.test(nameInput.value)) {
+            errors.push("Please enter a valid name.");
+        }
+
+        if (!emailPattern.test(emailInput.value)) {
+            errors.push("Please enter a valid email address.");
+        }
+
+        if (messageInput.value.trim() === "") {
+            errors.push("Please enter a message.");
+        }
+
+
+        if (errors.length > 0) {
+            alert(errors.join("\n"));
+        } else {
+
+        }
+    }
+
+
+    form.addEventListener('submit', function (event) {
+        event.preventDefault(); 
+        validateForm(); 
+    });
+</script>
             
                     <div class='ContactInfo'>
             <div class="container">
@@ -86,12 +125,16 @@
                     for any information.</h3>
 
                 <form>
-                    <input class='smallInp' type="text" placeholder='Name*' />
-                    <input class='smallInp' type="text" placeholder='Email*' />
-                    <input class='largeInp' type="text" placeholder='Your Message*' />
+                    <input class='smallInp' type="text" placeholder='Name*' required />
+                    <input class='smallInp' type="email" placeholder='Email*' required />
+                    <input class='largeInp' type="text" placeholder='Your Message*' required />
                     <button>Send Message</button>
+                   
                 </form>
+
             </div>
         </div>
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d130450.0444808317!2d15.037647143779584!3d59.27814481000282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ssv!2sse!4v1694640201245!5m2!1ssv!2sse" width="100%" height="500" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+

@@ -1,0 +1,95 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ContactPage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "_Layout.cshtml";
+}
+
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href='@Url.Content("~/css/umbraco-starterkit-style.css")' />
+    <link rel="stylesheet" href="/css/App.css" />
+</head>
+
+            <div class='news-header'>
+                <div class="container">
+                    <div class="header">
+                        <ul>
+                            <li>
+                                <Link class='link' to="/">Home</Link>
+                            </li>
+                            <li>
+                                <Link class='link' to="/Contact">Contact</Link>
+                            </li>
+                        </ul>
+
+                        <h1>Let’s Connect</h1>
+
+                    </div>
+                </div>
+            </div>
+            
+                    <div class='ContactInfo'>
+            <div class="container">
+
+                <div class="cboxes-wrapper">
+                    <div class="cbox border">
+                        <div class="l">
+                            <div class="wrapper">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                        </div>
+
+                        <div class="r">
+                            <h5>Visit Us</h5>
+                            <p>Sveavägen 31</p>
+                            <p>111 34 STOCKHOLM</p>
+                        </div>
+                    </div>
+
+                    <div class="cbox border">
+                        <div class="l">
+                            <div class="wrapper">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                        </div>
+
+                        <div class="r">
+                            <h5>Call Us</h5>
+                            <p>+46 (8) 121 470 50</p>
+                            <p>+46 (8) 121 470 51</p>
+                        </div>
+                    </div>
+                    <div class="cbox border">
+                        <div class="l">
+                            <div class="wrapper">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                        </div>
+
+                        <div class="r">
+                            <h5>Email Us</h5>
+                            <p>info@crito.com</p>
+                            <p>support@crito.com</p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        
+                <div class='ContactForm'>
+            <div class="container">
+
+                <h3>Leave us a message
+                    for any information.</h3>
+
+                <form>
+                    <input class='smallInp' type="text" placeholder='Name*' />
+                    <input class='smallInp' type="text" placeholder='Email*' />
+                    <input class='largeInp' type="text" placeholder='Your Message*' />
+                    <button>Send Message</button>
+                </form>
+            </div>
+        </div>

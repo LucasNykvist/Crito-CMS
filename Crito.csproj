@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\images\logos\" />
+    <Folder Include="wwwroot\images\icons\" />
   </ItemGroup>
 
   <PropertyGroup>

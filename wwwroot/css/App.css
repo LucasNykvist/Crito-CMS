@@ -64,8 +64,8 @@
 }
 
 .nav {
-  font-family: "Inter";
-  background-color: #F0EFE9;
+    font-family: "Inter";
+    background-color: #F0EFE9;
 }
 .nav .container {
   display: flex;
@@ -124,10 +124,11 @@
 .nav .container .middleNav .bottom .right button:hover {
   background-color: black;
   color: white;
+
 }
 
 .intro {
-  background-color: #F0EFE9;
+    background-color: #F0EFE9;
 }
 .intro .container .content {
   width: 100%;

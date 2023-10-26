@@ -1,7 +1,10 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@using Microsoft.AspNetCore.Html;
+@using Microsoft.AspNetCore.WebUtilities;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
     Layout = null;
+}
 }
 
 
@@ -26,5 +29,40 @@
     @await Html.PartialAsync("_Footer")
 
     <script src="https://kit.fontawesome.com/41c8b474e2.js" crossorigin="anonymous"></script>
+    <script>
+        const validateForm = () => {
+            document.getElementById("nameError").textContent = "";
+            document.getElementById("emailError").textContent = "";
+            document.getElementById("messageError").textContent = "";
+
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+
+            if (name.length < 3) {
+                document.getElementById("nameError").textContent = "Name must be at least 3 characters";
+                return false;
+            }
+
+            if (name.length > 50) {
+                document.getElementById("nameError").textContent = "Name cannot exceed 50 characters";
+                return false;
+            }
+
+            const emailRegexPattern = /^[a-zA-Z0-9]([\w\-\.\+\']*)@@([\w\-\.]*)(\.[a-zA-Z]{2,20}(\.[a-zA-Z]{2}){0,2})$/;
+
+            if (!email.match(emailRegexPattern)) {
+                document.getElementById("emailError").textContent = "Enter a valid email address";
+                return false;
+            }
+
+            if (message.trim() === "") {
+                document.getElementById("messageError").textContent = "Message is required";
+                return false;
+            }
+
+            return true;
+        }
+    </script>
 </body>
 </html>

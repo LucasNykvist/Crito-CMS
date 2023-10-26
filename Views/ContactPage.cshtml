@@ -1,5 +1,4 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ContactPage>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
 	Layout = "_Layout.cshtml";
@@ -29,46 +28,9 @@
                 </div>
             </div>
 
-<script>
-    const form = document.querySelector('form');
-    const nameInput = document.querySelector('input[placeholder="Name*"]');
-    const emailInput = document.querySelector('input[placeholder="Email*"]');
-    const messageInput = document.querySelector('input[placeholder="Your Message*"]');
 
-    const namePattern = /^[A-Za-z\s]+$/;
-
-    function validateForm() {
-
-        let errors = [];
-
-        if (!namePattern.test(nameInput.value)) {
-            errors.push("Please enter a valid name.");
-        }
-
-        if (!emailPattern.test(emailInput.value)) {
-            errors.push("Please enter a valid email address.");
-        }
-
-        if (messageInput.value.trim() === "") {
-            errors.push("Please enter a message.");
-        }
-
-
-        if (errors.length > 0) {
-            alert(errors.join("\n"));
-        } else {
-
-        }
-    }
-
-
-    form.addEventListener('submit', function (event) {
-        event.preventDefault(); 
-        validateForm(); 
-    });
-</script>
             
-                    <div class='ContactInfo'>
+           <div class='ContactInfo'>
             <div class="container">
 
                 <div class="cboxes-wrapper">
@@ -118,19 +80,31 @@
             </div>
         </div>
         
-                <div class='ContactForm'>
+           <div class='ContactForm'>
             <div class="container">
 
                 <h3>Leave us a message
                     for any information.</h3>
 
-                <form>
-                    <input class='smallInp' type="text" placeholder='Name*' required />
-                    <input class='smallInp' type="email" placeholder='Email*' required />
-                    <input class='largeInp' type="text" placeholder='Your Message*' required />
-                    <button>Send Message</button>
-                   
-                </form>
+
+        <form id="myForm" method="post" onsubmit="return validateForm()">
+            <div class="input-field">
+                <input class='smallInp w-100' type="text" id="name" placeholder='Name*'/>
+                <div id="nameError" class="error-message"></div>
+            </div>
+            <div class="input-field">
+                <input class='smallInp w-100' type="email" id="email" placeholder='Email*' />
+                <div id="emailError" class="error-message"></div>
+            </div>
+            <div class="input-field">
+                <input class='largeInp w-100' type="text" id="message" placeholder='Your Message*'/>
+                <div id="messageError" class="error-message"></div>
+            </div>
+            <button type="submit">Send Message</button>
+            <div id="errorMessage" class="error-message" style="display: none;"></div>
+        </form>
+
+        
 
             </div>
         </div>
